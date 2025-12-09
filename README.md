@@ -8,13 +8,17 @@ The [Advent of Code](https://adventofcode.com/about) is a series of daily progra
 
 Solutions are organized logically by year and day, with each day's challenge encapsulated within its own folder.
 
-```
+```rs
 .
 ├── 2025/
-│   ├── day-01/
+│   ├─── day-01/
+│   │    ├── data/      // Input files for the challenge
+│   │    ├── day-01.rs  // Solution code
+│   │    ├── Cargo.lock // Cargo lock file for environment consistency
+│   │    └── Cargo.toml // Cargo configuration file
 │   ├── day-02/
 │   └── ...
-├── ... 
+├── ...
 └── README.md
 ```
 
