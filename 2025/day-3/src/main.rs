@@ -1,7 +1,7 @@
 use std::fs;
 
 const DATA_PATH: &str = "data/batteries-input.txt";
-const PART_2_BATTERY_TO_USE: usize = 5;
+const PART_2_BATTERY_TO_USE: usize = 12;
 
 fn read_data() -> Result<String, std::io::Error> {
     fs::read_to_string(DATA_PATH)
@@ -33,7 +33,7 @@ fn part_one(input: &str) -> usize {
         }
 
         // Compute the value of the best two-digit number and add it to the total
-        overall_joltage += (s0 as usize) * (s1 as usize);
+        overall_joltage += (s0 as usize) * 10 + (s1 as usize);
     }
 
     overall_joltage
