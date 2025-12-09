@@ -12,10 +12,11 @@ Solutions are organized logically by year and day, with each day's challenge enc
 .
 ├── 2025/
 │   ├─── day-01/
-│   │    ├── data/      // Input files for the challenge
-│   │    ├── day-01.rs  // Solution code
-│   │    ├── Cargo.lock // Cargo lock file for environment consistency
-│   │    └── Cargo.toml // Cargo configuration file
+│   │    ├── data/        // Input files for the challenge
+│   │    ├── src/        
+│   │    │   └── main.rs  // Solution code for the day's challenge
+│   │    ├── Cargo.lock   // Cargo lock file for environment consistency
+│   │    └── Cargo.toml   // Cargo configuration file
 │   ├── day-02/
 │   └── ...
 ├── ...
