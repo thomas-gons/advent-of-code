@@ -1,6 +1,8 @@
 [package]
-name = "day-1"
+name = "day-01"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+anyhow = "1.0"
+aoc = { path = "../common" }

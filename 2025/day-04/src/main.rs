@@ -1,10 +1,4 @@
-use std::fs;
-
-const DATA_PATH: &str = "data/rolls-layout-input.txt";
-
-fn read_data() -> Result<String, std::io::Error> {
-    return fs::read_to_string(DATA_PATH)
-}
+const DATA_PATH: &str = "day-04/data/rolls-layout-input.txt";
 
 fn part_one(input: &str) -> usize {
     let rolls_layout: Vec<Vec<bool>> = input
@@ -93,10 +87,9 @@ fn part_two(input: &str) -> usize {
 
 
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let input = read_data()?;
-    println!("The solution for the first part is {}", part_one(&input));
-    println!("The solution for the second part is {}", part_two(&input));    
-    
+fn main() -> anyhow::Result<()> {
+    let input = aoc::read_input(DATA_PATH)?;
+    aoc::run(part_one, part_two, &input);
+
     Ok(())
 }

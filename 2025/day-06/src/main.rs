@@ -1,12 +1,6 @@
-use std::fs;
 use regex::Regex;
 
-const DATA_PATH: &str = "data/cephalopod-math-pb-input.txt";
-
-fn read_data() -> Result<String, std::io::Error> {
-    fs::read_to_string(DATA_PATH)
-}
-
+const DATA_PATH: &str = "day-06/data/cephalopod-math-pb-input.txt";
 
 fn part_one(input: &str) -> usize {
     let mut operands: Vec<Vec<usize>> = Vec::new();
@@ -153,11 +147,9 @@ fn part_two(input: &str) -> usize {
     grand_total
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let input = read_data()?;
-
-    println!("The solution for the first part is: {}", part_one(&input));
-    println!("The solution for the second part is: {}", part_two(&input));
+fn main() -> anyhow::Result<()> {
+    let input = aoc::read_input(DATA_PATH)?;
+    aoc::run(part_one, part_two, &input);
 
     Ok(())
 }

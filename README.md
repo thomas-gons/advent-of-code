@@ -11,12 +11,17 @@ Solutions are organized logically by year and day, with each day's challenge enc
 ```rs
 .
 ├── 2025/
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── common/           // Shared utilities and modules
+│   │   ├── Cargo.toml
+│   │   └── src
+│   │       └── lib.rs    // Common runner and utilities
 │   ├─── day-01/
 │   │    ├── data/        // Input files for the challenge
 │   │    ├── src/        
 │   │    │   └── main.rs  // Solution code for the day's challenge
-│   │    ├── Cargo.lock   // Cargo lock file for environment consistency
-│   │    └── Cargo.toml   // Cargo configuration file
+│   │    └── Cargo.toml   // Cargo configuration file specific to the day's challenge
 │   ├── day-02/
 │   └── ...
 ├── ...
@@ -31,9 +36,9 @@ My primary focus for the 2025 challenges is the Rust programming language. Given
 
 To run the solutions, ensure you have Rust installed on your machine. You can install Rust using [rustup](https://rustup.rs/).
 
-Go to the desired day's directory and run the solution using Cargo:
+Navigate to the desired year and execute the following command to run a specific day's solution:
 
 ```bash
-cd <year>/day-<day-number>/
-cargo run
+cd <year>
+cargo run -p day-<day-number>
 ```

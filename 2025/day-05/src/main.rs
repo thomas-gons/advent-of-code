@@ -1,10 +1,6 @@
-use std::fs;
 
-const DATA_PATH: &str = "data/ingredients-ids-input.txt";
+const DATA_PATH: &str = "day-05/data/ingredients-ids-input.txt";
 
-fn read_data() -> Result<String, std::io::Error> {
-    fs::read_to_string(DATA_PATH)
-}
 fn _merge_ranges(ranges: &mut Vec<(usize, usize)>) -> Vec<(usize, usize)> {
     // Sort ranges by their start values
     ranges.sort_by_key(|k| k.0);
@@ -82,11 +78,9 @@ fn part_two(data: &str) -> usize {
     fresh_ingredients_ranges.iter().map(|(start, end)| end - start + 1).sum()
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let input = read_data()?;
-
-    println!("The solution for the first part is: {}", part_one(&input));
-    println!("The solution for the second part is: {}", part_two(&input));
+fn main() -> anyhow::Result<()> {
+    let input = aoc::read_input(DATA_PATH)?;
+    aoc::run(part_one, part_two, &input);
 
     Ok(())
 }

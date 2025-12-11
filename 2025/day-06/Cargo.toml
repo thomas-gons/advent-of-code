@@ -5,3 +5,5 @@ edition = "2024"
 
 [dependencies]
 regex="1"
+anyhow = "1.0"
+aoc = { path = "../common" }

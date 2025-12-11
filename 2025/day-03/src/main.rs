@@ -1,11 +1,5 @@
-use std::fs;
-
-const DATA_PATH: &str = "data/batteries-input.txt";
+const DATA_PATH: &str = "day-03/data/batteries-input.txt";
 const PART_2_BATTERY_TO_USE: usize = 12;
-
-fn read_data() -> Result<String, std::io::Error> {
-    fs::read_to_string(DATA_PATH)
-}
 
 fn part_one(input: &str) -> usize {
     let mut overall_joltage = 0usize;
@@ -77,11 +71,9 @@ fn part_two(input: &str) -> usize {
 }
 
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let input = read_data()?;
-
-    println!("The solution for the first part is {}", part_one(&input));
-    println!("The solution for the second part is {}", part_two(&input));
+fn main() -> anyhow::Result<()> {
+    let input = aoc::read_input(DATA_PATH)?;
+    aoc::run(part_one, part_two, &input);
     
     Ok(())
 }

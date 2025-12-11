@@ -1,11 +1,5 @@
-use std::fs;
-use std::error::Error;
 
-const DATA_PATH: &str = "data/ids-input.txt";
-
-fn read_data() -> Result<String, std::io::Error> {
-    fs::read_to_string(DATA_PATH)
-}
+const DATA_PATH: &str = "day-02/data/ids-input.txt";
 
 fn part_one(input: &str) -> u64 {
     let mut invalid_ids_sum = 0u64;
@@ -88,11 +82,9 @@ fn part_two(input: &str) -> u64 {
     invalid_ids.iter().sum()
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
-    let input = read_data()?;
-
-    println!("The solution for the first part is {}", part_one(&input));
-    println!("The solution for the second part is {}", part_two(&input));    
+fn main() -> anyhow::Result<()> {
+    let input = aoc::read_input(DATA_PATH)?;
+    aoc::run(part_one, part_two, &input);
 
     Ok(())
 }
